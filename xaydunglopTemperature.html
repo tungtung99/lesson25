@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="doF"></h1>
+    <h1 id="doK"></h1>
+    <script>
+        let doF = document.getElementById('doF')
+        let doK = document.getElementById('doK')
+        let Temperature = function(doC){
+            this.doC=doC;
+            this.getdoC=function(){
+                return this.doC;
+            }
+            this.getdoF=function(){
+                return 9/5 * this.doC + 32;
+            }
+            this.getdoK=function(){
+                return this.doC + (273.15);
+            }
+        }
+        let tem = new Temperature(25)
+        doF.innerText = 'Độ F : '+tem.getdoF();
+        doK.innerText = 'Độ K : '+tem.getdoK();
+    </script>
+</body>
+</html>

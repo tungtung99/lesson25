@@ -16,13 +16,13 @@
             this.radius = radius;
             this.color = color;
             this.getColor = function(){
-                return color;
+                return this.color;
             }
             this.getRadius= function() {
-                return radius;
+                return this.radius;
             }
             this.getArea = function(){
-                return Math.PI*radius*radius;
+                return Math.PI*this.radius*this.radius;
             }
         }
         let circle = new Circle(2,'red');

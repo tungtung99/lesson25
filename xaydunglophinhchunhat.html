@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas"  style="border:1px solid #000000;">
+    <script>
+        let Rectangle = function (chieudai, chieurong) {
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+            this.getchieudai = function () {
+                return this.chieudai;
+            }
+            this.getchieurong = function () {
+                return this.chieurong;
+            }
+            this.getDientich = function () {
+                return this.chieudai * this.chieurong;
+            }
+            this.getChuvi = function () {
+                return 2 * (this.chieudai + this.chieurong);
+            }
+            this.gethinhvecanvas = function () {
+                let canvas = document.getElementById('myCanvas')
+                canvas.style.width = this.chieudai * 100 +'px';
+                canvas.style.height = this.chieurong * 100 +'px';
+            }
+        }
+        let rectangle = new Rectangle(10,1);
+        let dientich = rectangle.getDientich();
+        let chuvi = rectangle.getChuvi();
+        rectangle.gethinhvecanvas();
+        alert('Diện tích: '+dientich)
+        alert('Chu vi: '+chuvi)
+    </script>
+</body>
+
+</html>
